@@ -284,8 +284,11 @@ class OneSignalClient
         return !$this->appsConfigIsEmpty();
     }
 
-    public function setFirstAppConfig(){
-        $this->app(array_keys($this->appsConfig)[3]);
+    public function setFirstAppConfig(){    
+        $arrayKeys = array_keys($this->appsConfig);
+        $firstApp = array_shift();
+        
+        $this->app($firstApp);
     }
 
     public function send(){
